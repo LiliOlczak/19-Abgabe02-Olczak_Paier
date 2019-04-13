@@ -5,6 +5,12 @@
     <mkdir dir="build-ant"/>
   </target>  
   
+ <!-- clean -->
+ <target name="clean">
+    <delete dir="dist" />
+    <delete dir="lib" />
+    <delete dir="build-ant"/>
+ </target>
 
     
     
