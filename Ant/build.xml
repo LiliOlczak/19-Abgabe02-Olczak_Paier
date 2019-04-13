@@ -11,6 +11,12 @@
     <delete dir="lib" />
     <delete dir="build-ant"/>
  </target>
+    
+<!-- compile -->
+<target name="compile" depends="init">
+    <mkdir dir="build-ant/classes"/>
+    <javac srcdir="src" destdir="build-ant/classes" includeantruntime="false"/>
+</target>
 
     
     
