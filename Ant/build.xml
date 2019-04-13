@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding "UTF-8"?>
+<project name="FirstAntProject">
+
+  <!-- First target -> creates directories for later usage -->
+
+  <target name="init">
+    <mkdir dir="build-ant"/>
+  </target>  
+  
+ 
