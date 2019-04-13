@@ -18,6 +18,16 @@
     <javac srcdir="src" destdir="build-ant/classes" includeantruntime="false"/>
 </target>
 
+ <!-- jar -->
+ <target name="jar" depends="compile">
+     <mkdir dir="dist"/>
+     <jar destfile="dist/Main.jar" basedir="build-ant/classes">
+         <manifest>
+             <attribute name="Main-Class" value="at.fhj.msd.Main"/>
+         </manifest>
+     </jar>
+ </target>
+
     
     
 </project>
