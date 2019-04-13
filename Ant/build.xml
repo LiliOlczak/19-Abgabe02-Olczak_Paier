@@ -34,5 +34,12 @@
     <copy todir="lib" file="dist/Main.jar"/>
 </target>
     
+ <!-- run -->
+ <target name="run" depends="install">
+    <!--   <java jar="dist/Main.jar" output="output.txt" fork="true"> -->
+       <java jar="dist/Main.jar" fork="true">
+           <arg value="Paier Olczak"/>
+       </java>
+ </target>
     
 </project>
