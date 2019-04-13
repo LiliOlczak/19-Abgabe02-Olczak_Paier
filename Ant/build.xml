@@ -27,7 +27,12 @@
          </manifest>
      </jar>
  </target>
-
+    
+ <!-- install -->
+<target name="install" depends="jar">
+    <mkdir dir="lib"/>
+    <copy todir="lib" file="dist/Main.jar"/>
+</target>
     
     
 </project>
