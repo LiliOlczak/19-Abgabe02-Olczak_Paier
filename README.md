@@ -6,8 +6,8 @@ The purpose of this repository is to learn how to deal with build automation, as
 Therefore, two projects were created, a Maven and an Ant project, in order to understand the difference between building a project automatically and building a project manually.
 
 **Compare file structure Maven vs. Ant:** <br/>
-<img src="https://user-images.githubusercontent.com/48792646/56096791-007d9100-5eed-11e9-93b4-5434adbd63b4.jpg" width="100" >
-<img src="https://user-images.githubusercontent.com/48792646/56096832-433f6900-5eed-11e9-94ed-fe0497c76841.jpg" width="100" >
+<img src="https://user-images.githubusercontent.com/45802610/56097877-35dcab80-5efa-11e9-82e0-20752e326718.png" width="300" >
+<img src="https://user-images.githubusercontent.com/45802610/56097863-07f76700-5efa-11e9-900d-8b5235e8c56d.png" width="250">
 
 **Main-Class:** <br/>
 Includes the main() and sayHello() method.
