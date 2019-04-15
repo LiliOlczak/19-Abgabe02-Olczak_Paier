@@ -7,7 +7,7 @@ public class Main {
     {
         Main hello = new Main();
         int number = hello.sayHello(args[0]);
-        // System.out.println("Anzahl der ausgegebenen Zeichen: " + number);
+        System.out.println("Anzahl der ausgegebenen Zeichen: " + number);
     }
 
     public int sayHello(String name)

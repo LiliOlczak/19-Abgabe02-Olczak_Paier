@@ -1,45 +1,47 @@
-<project name="FirstAntProject">
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FirstAntProject" default="jar">
 
-  <!-- INIT : First target -> creates directories for later usage -->
- <target name="init">
-    <mkdir dir="build-ant"/>
-  </target>  
-  
- <!-- clean -->
- <target name="clean">
-    <delete dir="dist" />
-    <delete dir="lib" />
-    <delete dir="build-ant"/>
- </target>
-    
-<!-- compile -->
-<target name="compile" depends="init">
-    <mkdir dir="build-ant/classes"/>
-    <javac srcdir="src" destdir="build-ant/classes" includeantruntime="false"/>
-</target>
+    <property file="build.properties"/>
 
- <!-- jar -->
- <target name="jar" depends="compile">
-     <mkdir dir="dist"/>
-     <jar destfile="dist/Main.jar" basedir="build-ant/classes">
-         <manifest>
-             <attribute name="Main-Class" value="at.fhj.msd.Main"/>
-         </manifest>
-     </jar>
- </target>
-    
- <!-- install -->
-<target name="install" depends="jar">
-    <mkdir dir="lib"/>
-    <copy todir="lib" file="dist/Main.jar"/>
-</target>
-    
- <!-- run -->
- <target name="run" depends="install">
-    <!--   <java jar="dist/Main.jar" output="output.txt" fork="true"> -->
-       <java jar="dist/Main.jar" fork="true">
-           <arg value="Paier Olczak"/>
-       </java>
- </target>
-    
+    <!-- INIT : First target -> creates directories for later usage -->
+    <target name="init">
+        <mkdir dir="${ant.buildant}"/>
+    </target>
+
+    <!-- clean -->
+    <target name="clean">
+        <delete dir="${ant.dist}"/>
+        <delete dir="${ant.lib}"/>
+        <delete dir="${ant.buildant}"/>
+    </target>
+
+    <!-- compile -->
+    <target name="compile" depends="init">
+        <mkdir dir="${ant.buildant}/${ant.classes}"/>
+        <javac srcdir="src" destdir="${ant.buildant}/${ant.classes}" includeantruntime="false"/>
+    </target>
+
+    <!-- jar -->
+    <target name="jar" depends="compile">
+        <mkdir dir="${ant.dist}"/>
+        <jar destfile="${ant.dist}/${ant.filename}.jar" basedir="${ant.buildant}/${ant.classes}">
+            <manifest>
+                <attribute name="Main-Class" value="${ant.main}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- install -->
+    <target name="install" depends="jar">
+        <mkdir dir="${ant.lib}"/>
+        <copy todir="${ant.lib}" file="${ant.dist}/${ant.filename}.jar"/>
+    </target>
+
+    <!-- run -->
+    <target name="run" depends="install">
+        <java jar="${ant.dist}/${ant.filename}.jar" fork="true">
+            <arg value="${ant.arg}"/>
+        </java>
+    </target>
+
 </project>
